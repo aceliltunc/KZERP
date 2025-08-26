@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Text.Json;
-using KZERP.Core;
+using KZERP.Core.Entities;
 
 namespace KZERP.MVC.Controllers
 {

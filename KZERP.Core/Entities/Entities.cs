@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace KZERP.Core;
+namespace KZERP.Core.Entities;
 
 public class Product
 {
@@ -39,4 +39,26 @@ public class WorkOrder
     public DateTime? StartTime { get; set; }
     public DateTime? EndTime { get; set; }
     public string Status { get; set; } = "Pending";
+}
+
+public class RfidTags
+{
+    [Key]
+    public int RfidTagId { get; set; }
+    public int ProductId { get; set; }
+    public Product? Product { get; set; }
+    public int? SerialNo { get; set; }
+}
+
+public class InventoryMovements
+{
+    [Key]
+    public int MovementId { get; set; }
+    public int ProductId { get; set; }
+    public Product? Product { get; set; }
+    public int WarehouseId { get; set; }
+    public Warehouse? Warehouse { get; set; }
+    public string MovementType { get; set; } = "IN"; // IN or OUT
+    public int Quantity { get; set; }
+    public DateTime MovementDate { get; set; } = DateTime.Now;
 }

@@ -15,3 +15,4 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\refint
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.pdb
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.genruntimeconfig.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\ref\KZERP.Infrastructure.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.sourcelink.json

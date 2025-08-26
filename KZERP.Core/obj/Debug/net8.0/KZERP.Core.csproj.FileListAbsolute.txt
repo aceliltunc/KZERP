@@ -9,3 +9,4 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\refint\KZERP.Core.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.pdb
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\ref\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.sourcelink.json

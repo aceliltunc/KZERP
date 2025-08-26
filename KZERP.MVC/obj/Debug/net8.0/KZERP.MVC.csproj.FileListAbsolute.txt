@@ -32,3 +32,4 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\KZERP.Core.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\KZERP.Core.pdb
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.csproj.AssemblyReference.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.csproj.CopyComplete
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.sourcelink.json

@@ -1,6 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
 using KZERP.Infrastructure.Data;
+using KZERP.Core.Interfaces;
+using KZERP.Core.Services;
+using KZERP.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,12 +11,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<KZERPDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("KZERPDatabase")));
 
+
+// Dependency Injection for Services and Repositories
+builder.Services.AddScoped<IProductService, ProductsService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+
 builder.Services.AddControllers();
 
 
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
