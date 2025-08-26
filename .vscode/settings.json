@@ -1,0 +1,56 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "KZERP.Infrastructure\\obj\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.Infrastructure\\Data\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.Infrastructure\\Data\\DbContext.cs\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.Infrastructure\\bin\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.Infrastructure\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.Core\\",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "KZERP.API\\",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "KZERP.API.csproj\\",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "KZERP.API.http\\",
+            "color": "foldercolorizer.color_990033"
+        },
+        {
+            "folderPath": "KZERP.Core.csproj\\",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "KZERP.Infrastructure.csproj\\",
+            "color": "foldercolorizer.color_3366ff"
+        },
+        {
+            "folderPath": "KZERP.MVC\\",
+            "color": "foldercolorizer.color_66ffff"
+        },
+        {
+            "folderPath": "KZERP.MVC.csproj\\",
+            "color": "foldercolorizer.color_00cccc"
+        }
+    ]
+}

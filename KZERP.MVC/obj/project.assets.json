@@ -1,0 +1,92 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "KZERP.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/KZERP.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KZERP.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KZERP.Core/1.0.0": {
+      "type": "project",
+      "path": "../KZERP.Core/KZERP.Core.csproj",
+      "msbuildProject": "../KZERP.Core/KZERP.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "KZERP.Core >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\PC-ACT\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.MVC\\KZERP.MVC.csproj",
+      "projectName": "KZERP.MVC",
+      "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.MVC\\KZERP.MVC.csproj",
+      "packagesPath": "C:\\Users\\PC-ACT\\.nuget\\packages\\",
+      "outputPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.MVC\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\PC-ACT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj": {
+              "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

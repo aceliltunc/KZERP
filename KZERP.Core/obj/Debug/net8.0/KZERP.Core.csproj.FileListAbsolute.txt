@@ -1,0 +1,11 @@
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\bin\Debug\net8.0\KZERP.Core.deps.json
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\bin\Debug\net8.0\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\bin\Debug\net8.0\KZERP.Core.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.AssemblyInfoInputs.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.AssemblyInfo.cs
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.csproj.CoreCompileInputs.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\refint\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\KZERP.Core.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Core\obj\Debug\net8.0\ref\KZERP.Core.dll

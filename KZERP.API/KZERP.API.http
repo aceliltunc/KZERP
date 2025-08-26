@@ -1,0 +1,6 @@
+@KZERP.API_HostAddress = http://localhost:5276
+
+GET {{KZERP.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

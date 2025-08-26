@@ -1,0 +1,27 @@
+@model List<KZERP.Core.Product>
+
+<h2> Products List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Is Active</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.Code</td>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@(product.IsActive ? "Yes" : "No")</td>
+            </tr>
+        }
+</table>

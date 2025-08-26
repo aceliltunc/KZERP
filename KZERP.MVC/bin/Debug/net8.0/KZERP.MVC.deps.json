@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "KZERP.MVC/1.0.0": {
+        "dependencies": {
+          "KZERP.Core": "1.0.0"
+        },
+        "runtime": {
+          "KZERP.MVC.dll": {}
+        }
+      },
+      "KZERP.Core/1.0.0": {
+        "runtime": {
+          "KZERP.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KZERP.MVC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KZERP.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

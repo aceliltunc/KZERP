@@ -1,0 +1,17 @@
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.csproj.AssemblyReference.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.AssemblyInfoInputs.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.AssemblyInfo.cs
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.csproj.CoreCompileInputs.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.deps.json
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.runtimeconfig.json
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Core.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.csproj.CopyComplete
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\refint\KZERP.Infrastructure.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.genruntimeconfig.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\ref\KZERP.Infrastructure.dll
