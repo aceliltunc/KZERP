@@ -169,9 +169,10 @@ namespace KZERP.Identity.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "11111111-1111-1111-1111-111111111111", null, "Admin", "ADMIN" },
-                    { "22222222-2222-2222-2222-222222222222", null, "Engineer", "ENGINEER" },
-                    { "33333333-3333-3333-3333-333333333333", null, "Worker", "WORKER" }
+                    { "11111111-1111-1111-1111-111111111111", "EBF296D8-18C8-42A9-93C1-4D30B9557C4F", "Admin", "ADMIN" },
+                    { "22222222-2222-2222-2222-222222222222", "EBF296D8-18C8-42A9-93C1-4D30B9557C4F", "Engineer", "ENGINEER" },
+                    { "33333333-3333-3333-3333-333333333333", "EBF296D8-18C8-42A9-93C1-4D30B9557C4F", "Worker", "WORKER" },
+                    { "44444444-4444-4444-4444-444444444444", "EBF296D8-18C8-42A9-93C1-4D30B9557C4F", "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(

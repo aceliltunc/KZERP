@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KZERP.Identity.Migrations
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20250903154603_IdentityInit")]
+    [Migration("20250903162419_IdentityInit")]
     partial class IdentityInit
     {
         /// <inheritdoc />
@@ -138,20 +138,30 @@ namespace KZERP.Identity.Migrations
                         new
                         {
                             Id = "11111111-1111-1111-1111-111111111111",
+                            ConcurrencyStamp = "EBF296D8-18C8-42A9-93C1-4D30B9557C4F",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "22222222-2222-2222-2222-222222222222",
+                            ConcurrencyStamp = "EBF296D8-18C8-42A9-93C1-4D30B9557C4F",
                             Name = "Engineer",
                             NormalizedName = "ENGINEER"
                         },
                         new
                         {
                             Id = "33333333-3333-3333-3333-333333333333",
+                            ConcurrencyStamp = "EBF296D8-18C8-42A9-93C1-4D30B9557C4F",
                             Name = "Worker",
                             NormalizedName = "WORKER"
+                        },
+                        new
+                        {
+                            Id = "44444444-4444-4444-4444-444444444444",
+                            ConcurrencyStamp = "EBF296D8-18C8-42A9-93C1-4D30B9557C4F",
+                            Name = "User",
+                            NormalizedName = "USER"
                         });
                 });
 
