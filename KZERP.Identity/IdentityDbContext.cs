@@ -1,16 +1,22 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-using KZERP.Core.Entities.AppUser;
+using KZERP.Identity;
 
-namespace KZERP.Identity.IdentitiesDbContext
+
+namespace KZERP.Identity.IdentityDbContext
 {
-    public class IdentityDbContext : IdentityDbContext<ApplicationUser>
+    public class IdentityDbContext : IdentityDbContext<AppUser>
     {
-        public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
+        public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
+            : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-
+            base.OnModelCreating(builder);
+            // Varsayılan roller seed edilecek
+            builder.ApplyConfiguration(new RoleConfig());
         }
-
     }
 }

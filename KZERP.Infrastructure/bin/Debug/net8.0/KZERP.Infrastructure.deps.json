@@ -9,6 +9,7 @@
       "KZERP.Infrastructure/1.0.0": {
         "dependencies": {
           "KZERP.Core": "1.0.0",
+          "KZERP.Identity": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.8",
@@ -1070,6 +1071,16 @@
         "runtime": {
           "KZERP.Core.dll": {}
         }
+      },
+      "KZERP.Identity/1.0.0": {
+        "dependencies": {
+          "KZERP.Core": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8"
+        },
+        "runtime": {
+          "KZERP.Identity.dll": {}
+        }
       }
     }
   },
@@ -1640,6 +1651,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "KZERP.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KZERP.Identity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

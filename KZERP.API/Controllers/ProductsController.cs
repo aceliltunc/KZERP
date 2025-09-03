@@ -1,4 +1,5 @@
 
+using KZERP.Core.DTOs.ProductDTO;
 using KZERP.Core.Entities.Products;
 using KZERP.Core.Interfaces.IProductService;
 using Microsoft.AspNetCore.Authorization;
@@ -40,10 +41,10 @@ namespace KZERP.API.Controllers
 
         // POST: api/Products
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<Product>> PostProduct(ProductDTO productDto)
         {
-            await _productService.AddProductAsync(product);
-            return Ok(product);
+            await _productService.AddProductAsync(productDto);
+            return Ok(productDto);
         }
 
         // PUT: api/Products/5

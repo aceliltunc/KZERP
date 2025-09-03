@@ -1658,6 +1658,21 @@
         "runtime": {
           "bin/placeholder/KZERP.Core.dll": {}
         }
+      },
+      "KZERP.Identity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "KZERP.Core": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/KZERP.Identity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KZERP.Identity.dll": {}
+        }
       }
     }
   },
@@ -4622,11 +4637,17 @@
       "type": "project",
       "path": "../KZERP.Core/KZERP.Core.csproj",
       "msbuildProject": "../KZERP.Core/KZERP.Core.csproj"
+    },
+    "KZERP.Identity/1.0.0": {
+      "type": "project",
+      "path": "../KZERP.Identity/KZERP.Identity.csproj",
+      "msbuildProject": "../KZERP.Identity/KZERP.Identity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "KZERP.Core >= 1.0.0",
+      "KZERP.Identity >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.8",
@@ -4661,6 +4682,9 @@
           "projectReferences": {
             "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj": {
               "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj"
+            },
+            "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Identity\\KZERP.Identity.csproj": {
+              "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Identity\\KZERP.Identity.csproj"
             }
           }
         }

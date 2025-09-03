@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.ProductDTO;
 using KZERP.Core.Entities.Products;
 
 namespace KZERP.Core.Interfaces.IProductService
@@ -7,7 +8,7 @@ namespace KZERP.Core.Interfaces.IProductService
     {
         Task<List<Product>> GetAllProductsAsync();
         Task<Product> GetProductByIdAsync(int id);
-        Task AddProductAsync(Product product);
+        Task AddProductAsync(ProductDTO productDto);
         Task UpdateProductAsync(Product product);
         Task DeleteProductAsync(int id);
     }

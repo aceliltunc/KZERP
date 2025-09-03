@@ -1,6 +1,7 @@
 
 
 
+using KZERP.Core.DTOs.WarehouseDTO;
 using KZERP.Core.Entities.Warehouses;
 using KZERP.Core.Interfaces.IWarehousesService;
 using Microsoft.AspNetCore.Mvc;
@@ -39,10 +40,10 @@ namespace KZERP.API.Controllers
 
         // POST: api/Products
         [HttpPost]
-        public async Task<ActionResult> PostWarehouse(Warehouse warehouse)
+        public async Task<ActionResult> PostWarehouse(WarehouseDTO warehouseDTO)
         {
-            await _warehousesService.AddWarehouseAsync(warehouse);
-            return Ok(warehouse);
+            await _warehousesService.AddWarehouseAsync(warehouseDTO);
+            return Ok(warehouseDTO);
         }
 
         // PUT: api/Products

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pssYIUd9sUZra3KJ42LscQ/hQNm2Dezpc6GW18/jo3gkYVe6VqXiP9MHKQrSy7Q/q1gzCEF3l2ZJ92X0aLFnYw==",
+  "dgSpecHash": "6lV5kM8WBSzDwnt9iSD3EFLlyfLLqCVzWgbbl24xDFaGaxjcJadGir/oF7areNKQ3a/q5ly9xIWOuxDA3Yp1Ig==",
   "success": true,
   "projectFilePath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.API\\KZERP.API.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.entityframeworkcore.design\\9.0.8\\microsoft.entityframeworkcore.design.9.0.8.nupkg.sha512",
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.8\\microsoft.entityframeworkcore.relational.9.0.8.nupkg.sha512",
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\9.0.8\\microsoft.entityframeworkcore.sqlserver.9.0.8.nupkg.sha512",
+    "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.8\\microsoft.entityframeworkcore.tools.9.0.8.nupkg.sha512",
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.8\\microsoft.extensions.caching.abstractions.9.0.8.nupkg.sha512",
     "C:\\Users\\PC-ACT\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.8\\microsoft.extensions.caching.memory.9.0.8.nupkg.sha512",

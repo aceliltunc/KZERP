@@ -9,7 +9,6 @@ using KZERP.Infrastructure.Repository.ProductRepository;
 using KZERP.Core.Interfaces.IWarehousesService;
 using KZERP.Core.Services.ProductsService;
 
-using KZERP.Core.Entities.Warehouses;
 using KZERP.Core.Services.WarehousesService;
 using KZERP.Infrastructure.Repository.WarehousesRepository;
 using KZERP.Core.Interfaces.IProductRepository;
@@ -18,6 +17,7 @@ using KZERP.Core.Interfaces.IRfidService;
 using KZERP.Core.Services.RfidService;
 using KZERP.Core.Interfaces.IRfidRepository;
 using KZERP.Infrastructure.Repository.RfidRepository;
+using KZERP.Identity.IdentityDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,18 +28,24 @@ builder.Services.AddDbContext<KZERPDbContext>(options =>
     )
 );
 
+// IdentityDbContext
+builder.Services.AddDbContext<IdentityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("KZERPDatabase"))
 
-// // Identity Configuration
-// builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-// {
-//     options.Password.RequireDigit = true;
-//     options.Password.RequiredLength = 6;
-//     options.Password.RequireNonAlphanumeric = false;
-//     options.Password.RequireUppercase = false;
-//     options.Password.RequireLowercase = false;
-// }).AddEntityFrameworkStores<KZERPDbContext>()
-//   .AddDefaultTokenProviders()
-//   .AddRoles<IdentityRole>();
+);
+// Identity Configuration
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+}).AddEntityFrameworkStores<IdentityDbContext>()
+  .AddDefaultTokenProviders()
+  .AddRoles<IdentityRole>();
+
+
 
 // // JWT Authentication Configuration
 // builder.Services.AddAuthentication(options =>

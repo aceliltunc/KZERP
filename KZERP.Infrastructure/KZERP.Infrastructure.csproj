@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KZERP.Core\KZERP.Core.csproj" />
+    <ProjectReference Include="..\KZERP.Identity\KZERP.Identity.csproj" />
   </ItemGroup>
 
 </Project>

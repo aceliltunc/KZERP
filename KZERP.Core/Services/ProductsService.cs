@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.ProductDTO;
 using KZERP.Core.Entities.Products;
 using KZERP.Core.Interfaces.IProductRepository;
 using KZERP.Core.Interfaces.IProductService;
@@ -28,9 +29,17 @@ namespace KZERP.Core.Services.ProductsService
             return await _productRepository.GetProductByIdAsync(id);
         }
 
-        public async Task AddProductAsync(Product product)
+        public async Task AddProductAsync(ProductDTO productDTO)
         {
-            if (string.IsNullOrEmpty(product.Name))
+            var product = new Product
+            {
+                Code = productDTO.Code,
+                Name = productDTO.Name,
+                Category = productDTO.Category,
+                IsActive = productDTO.IsActive,
+            };
+
+            if (string.IsNullOrEmpty(productDTO.Name))
                 throw new ArgumentException("Product name required");
 
             await _productRepository.AddProductAsync(product);

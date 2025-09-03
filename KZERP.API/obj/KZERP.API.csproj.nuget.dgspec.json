@@ -78,6 +78,12 @@
               "target": "Package",
               "version": "[9.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -210,6 +216,12 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
             }
           },
           "imports": [
@@ -256,6 +268,9 @@
             "projectReferences": {
               "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj": {
                 "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Core\\KZERP.Core.csproj"
+              },
+              "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Identity\\KZERP.Identity.csproj": {
+                "projectPath": "C:\\ACT\\drive\\YazilimProjeleri\\KZERP\\KZERP.Identity\\KZERP.Identity.csproj"
               }
             }
           }

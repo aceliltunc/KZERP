@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.WarehouseDTO;
 using KZERP.Core.Entities.Warehouses;
 using KZERP.Core.Interfaces.IWarehouseRepository;
 using KZERP.Core.Interfaces.IWarehousesService;
@@ -26,8 +27,14 @@ namespace KZERP.Core.Services.WarehousesService
             return await _warehouseRepository.GetWarehouseByIdAsync(id);
         }
 
-        public async Task AddWarehouseAsync(Warehouse warehouse)
+        public async Task AddWarehouseAsync(WarehouseDTO warehouseDTO)
         {
+            var warehouse = new Warehouse
+            {
+                Name = warehouseDTO.Name,
+                Location = warehouseDTO.Location
+            };
+
             if (string.IsNullOrEmpty(warehouse.Name))
                 throw new ArgumentException("Warehouse name required");
             await _warehouseRepository.AddWarehouseAsync(warehouse);

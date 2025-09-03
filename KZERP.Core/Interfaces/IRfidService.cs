@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.RfidDTO;
 using KZERP.Core.Entities.RfidLogs;
 
 namespace KZERP.Core.Interfaces.IRfidService
@@ -6,7 +7,7 @@ namespace KZERP.Core.Interfaces.IRfidService
     {
         Task<List<RfidLogs>> GetAllRfidsAsync();
         Task<RfidLogs?> GetRfidByIdAsync(int id);
-        Task AddRfidAsync(RfidLogs rfid);
+        Task AddRfidAsync(RfidDTO rfidDto);
         Task UpdateRfidAsync(RfidLogs rfid);
         Task DeleteRfidAsync(int id);
     }

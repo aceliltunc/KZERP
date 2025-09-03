@@ -1,21 +1,19 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace KZERP.Identity.RolesConfig
+namespace KZERP.Identity
 {
-    public static class RoleConfig
+    public class RoleConfig : IEntityTypeConfiguration<IdentityRole>
     {
-        public static async Task SeedRoles(RoleManager<IdentityRole> roleManager)
+        public void Configure(EntityTypeBuilder<IdentityRole> builder)
         {
-            string[] roles = { "Admin", "Worker", "Engineer" };
-
-            foreach (var role in roles)
-            {
-                if (!await roleManager.RoleExistsAsync(role))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(role));
-                }
-            }
+            builder.HasData(
+                new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Name = "Engineer", NormalizedName = "ENGINEER" },
+                new IdentityRole { Name = "Worker", NormalizedName = "WORKER" }
+            );
         }
     }
 }

@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.RfidDTO;
 using KZERP.Core.Entities.RfidLogs;
 using KZERP.Core.Interfaces.IRfidService;
 using Microsoft.AspNetCore.Mvc;
@@ -36,10 +37,10 @@ namespace KZERP.API.Controllers
 
         // POST: api/Rfid
         [HttpPost]
-        public async Task<ActionResult<RfidLogs>> PostRfid(RfidLogs rfid)
+        public async Task<ActionResult<RfidLogs>> PostRfid(RfidDTO rfidDTO)
         {
-            await _rfidService.AddRfidAsync(rfid);
-            return Ok(rfid);
+            await _rfidService.AddRfidAsync(rfidDTO);
+            return Ok(rfidDTO);
         }
 
         // PUT: api/Rfid/5
@@ -57,7 +58,7 @@ namespace KZERP.API.Controllers
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
 

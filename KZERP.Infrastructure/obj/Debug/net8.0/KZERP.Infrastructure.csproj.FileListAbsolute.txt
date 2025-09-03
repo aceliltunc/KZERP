@@ -23,7 +23,9 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Infrastructure.pdb
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Core.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Identity.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Core.pdb
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\bin\Debug\net8.0\KZERP.Identity.pdb
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.csproj.AssemblyReference.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.Infrastructure\obj\Debug\net8.0\KZERP.Infrastructure.AssemblyInfoInputs.cache

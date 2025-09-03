@@ -1,3 +1,4 @@
+using KZERP.Core.DTOs.WarehouseDTO;
 using KZERP.Core.Entities.Warehouses;
 
 namespace KZERP.Core.Interfaces.IWarehousesService
@@ -6,7 +7,7 @@ namespace KZERP.Core.Interfaces.IWarehousesService
     {
         Task<List<Warehouse>> GetAllWarehousesAsync();
         Task<Warehouse> GetWarehouseByIdAsync(int id);
-        Task AddWarehouseAsync(Warehouse warehouse);
+        Task AddWarehouseAsync(WarehouseDTO warehouse);
         Task UpdateWarehouseAsync(Warehouse warehouse);
         Task DeleteWarehouseAsync(int id);
     
