@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace KZERP.Identity
+namespace KZERP.Identity.AppUser
 {
-    public class AppUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         public string? FullName { get; set; }
         public string? JobTitle { get; set; }

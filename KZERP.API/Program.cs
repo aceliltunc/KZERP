@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using KZERP.Infrastructure.Data;
-using KZERP.Identity.AppUser;
 using KZERP.Core.Interfaces.IProductService;
 using KZERP.Infrastructure.Repository.ProductRepository;
 
@@ -17,7 +16,14 @@ using KZERP.Core.Interfaces.IRfidService;
 using KZERP.Core.Services.RfidService;
 using KZERP.Core.Interfaces.IRfidRepository;
 using KZERP.Infrastructure.Repository.RfidRepository;
+using KZERP.Identity;
+using KZERP.Identity.AppUser;
+using KZERP.Identity.Services;
 using KZERP.Identity.IdentityDbContext;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +35,7 @@ builder.Services.AddDbContext<KZERPDbContext>(options =>
 );
 
 // IdentityDbContext
-builder.Services.AddDbContext<IdentityDbContext>(options =>
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("KZERPDatabase"))
 
 );
@@ -41,40 +47,35 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
-}).AddEntityFrameworkStores<IdentityDbContext>()
+}).AddEntityFrameworkStores<AppIdentityDbContext>()
   .AddDefaultTokenProviders()
   .AddRoles<IdentityRole>();
 
 
 
-// // JWT Authentication Configuration
-// builder.Services.AddAuthentication(options =>
-// {
+// JWT Authentication Configuration
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        var cfg = builder.Configuration;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = cfg["Jwt:Issuer"],
+            ValidAudience = cfg["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(cfg["Jwt:Key"]!))
+        };
+        options.SaveToken = true;
+    });
 
-//     options.DefaultAuthenticateScheme = "JwtBearer";
-//     options.DefaultChallengeScheme = "JwtBearer";   
-// })
-// .AddJwtBearer("JwtBearer", options =>
-// { 
-//     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-//     {
-//         ValidateIssuer = true,
-//         ValidateAudience = true,
-//         ValidateLifetime = true,
-//         ValidateIssuerSigningKey = true,
-//         ValidIssuer = builder.Configuration["Jwt:Issuer"],
-//         ValidAudience = builder.Configuration["Jwt:Audience"],
-//         IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-//             System.Text.Encoding.UTF8.GetBytes(
-//                 builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key is missing in configuration.")
-//             )
-//         ),
-//         ClockSkew = TimeSpan.Zero
-//     };
-// });
+builder.Services.AddAuthorization();
 
-
-
+// Identity Services (DI)
+builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Services and Repositories
 builder.Services.AddScoped<IProductService, ProductsService>();

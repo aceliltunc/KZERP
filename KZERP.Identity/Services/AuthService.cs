@@ -2,17 +2,17 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
+using KZERP.Identity.AppUser;
+
 namespace KZERP.Identity.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IJwtTokenService _jwt;
 
-        public AuthService(UserManager<AppUser> userManager,
-                           SignInManager<AppUser> signInManager,
-                           IJwtTokenService jwt)
+        public AuthService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IJwtTokenService jwt)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -21,14 +21,14 @@ namespace KZERP.Identity.Services
 
         public async Task<(bool ok, IEnumerable<string> errors)> RegisterAsync(RegisterDto dto)
         {
-            var user = new AppUser
+            var user = new ApplicationUser
             {
-                UserName   = dto.Username,
-                Email      = dto.Email,
-                FullName   = dto.FullName,
-                JobTitle   = dto.JobTitle,
+                UserName = dto.Username,
+                Email = dto.Email,
+                FullName = dto.FullName,
+                JobTitle = dto.JobTitle,
                 Department = dto.Department,
-                IsActive   = true
+                IsActive = true
             };
 
             var result = await _userManager.CreateAsync(user, dto.Password);
