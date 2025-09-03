@@ -1,0 +1,25 @@
+@using KZERP.Core.Entities.RfidLogs
+@model List<RfidLogs>
+
+<h2> Rfid List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>RFIDLogs ID</th>
+            <th>Card UID</th>
+            <th>Scan Time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var rfidLogs in Model)
+        {
+            <tr>
+                <td>@rfidLogs.Id</td>
+                <td>@rfidLogs.CardUID</td>
+                <td>@rfidLogs.ScanTime</td>
+
+            </tr>
+        }
+</table>

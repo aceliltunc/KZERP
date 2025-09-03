@@ -1,57 +1,58 @@
 
-namespace KZERP.Infrastructure.Repository;
-
-using KZERP.Core.Entities;
-using KZERP.Core.Interfaces;
+using KZERP.Core.Entities.Products;
+using KZERP.Core.Interfaces.IProductRepository;
 using KZERP.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-public class ProductRepository : IProductRepository
+namespace KZERP.Infrastructure.Repository.ProductRepository
 {
-    private readonly KZERPDbContext _context;
-
-    public ProductRepository(KZERPDbContext context)
+    public class ProductRepository : IProductRepository
     {
-        _context = context;
-    }
+        private readonly KZERPDbContext _context;
 
-    public async Task<List<Product>> GetAllAsync()
-    {
-        return await _context.Products.ToListAsync();
-    }
-
-    
-    public async Task<Product> GetByIdAsync(int id)
-    {
-        var product = await _context.Products.FindAsync(id);
-
-        if (product == null)
+        public ProductRepository(KZERPDbContext context)
         {
-            throw new NullReferenceException($"Product with ID {id} not found.");
+            _context = context;
         }
 
-        return product;
-    }
-
-    public async Task AddAsync(Product product)
-    {
-        await _context.Products.AddAsync(product);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task UpdateAsync(Product product)
-    {
-        _context.Products.Update(product);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task DeleteAsync(int id)
-    {
-        var product = await GetByIdAsync(id);
-        if (product != null)
+        public async Task<List<Product>> GetAllProductsAsync()
         {
-            _context.Products.Remove(product);
+            return await _context.Products.ToListAsync();
+        }
+
+
+        public async Task<Product> GetProductByIdAsync(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                throw new NullReferenceException($"Product with ID {id} not found.");
+            }
+
+            return product;
+        }
+
+        public async Task AddProductAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateProductAsync(Product product)
+        {
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteProductAsync(int id)
+        {
+            var product = await GetProductByIdAsync(id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

@@ -27,6 +27,26 @@
         {
             "folderPath": "KZERP.MVC\\",
             "color": "foldercolorizer.color_6600ff"
+        },
+        {
+            "folderPath": "KZERP_Y\\KZERP.API\\",
+            "color": "foldercolorizer.color_00cc33"
+        },
+        {
+            "folderPath": "KZERP_Y\\KZERP.Infrastructure\\",
+            "color": "foldercolorizer.color_cc0000"
+        },
+        {
+            "folderPath": "KZERP_Y\\KZERP.Infrastructure\\Migrations\\",
+            "color": "foldercolorizer.color_cc0000"
+        },
+        {
+            "folderPath": "KZERP_Y\\KZERP.MVC\\",
+            "color": "foldercolorizer.color_ccccff"
+        },
+        {
+            "folderPath": "KZERP.Identity\\",
+            "color": "foldercolorizer.color_eeeeee"
         }
     ]
 }

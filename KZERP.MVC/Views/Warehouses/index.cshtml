@@ -1,0 +1,24 @@
+@using KZERP.Core.Entities.Warehouses
+@model List<Warehouse>
+
+<h2>Warehouses List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var warehouse in Model)
+        {
+            <tr>
+                <td>@warehouse.Id</td>
+                <td>@warehouse.Name</td>
+                <td>@warehouse.Location</td>
+            </tr>
+        }
+    </tbody>
+</table>

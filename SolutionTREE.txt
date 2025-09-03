@@ -1,0 +1,47 @@
+Solution Yapısı
+KZERP.sln 
+│
+├── 📂 KZERP.API                // ASP.NET Web API (Backend)
+│   ├── Controllers                 // REST endpointler (ProductsController, OrdersController, AuthController)
+│   ├── DTOs                        // Veri transfer objeleri (API <-> UI)
+│   ├── Middlewares                 // Token doğrulama, logging, exception handling
+│   ├── Program.cs / Startup.cs     // DI config, pipeline, JWT setup
+│   └── appsettings.json            // Azure SQL DB connection string, diğer konfigürasyon
+│
+├── 📂 KZERP.UI (ASP.NET MVC)   // Kullanıcı Arayüzü (Frontend)
+│   ├── Controllers                 // MVC Controller (DashboardController, InventoryController)
+│   ├── Views                       // Razor View’lar (.cshtml)
+│   ├── Models                      // UI ViewModel’leri
+│   └── wwwroot                     // CSS, JS, resimler
+│
+├── 📂 KZERP.Core               // Business Logic Layer (İş Kuralları)
+│   ├── Interfaces                  // Service interface’leri (IProductService, IOrderService)
+│   ├── Services                    // Servis implementasyonları
+│   ├── Entities                    // Domain modelleri (Product, Order, User, WorkOrder vs.)
+│   └── Helpers                     // Validasyon, hesaplama, util sınıfları
+│
+├── 📂 KZERP.Infrastructure     // Data Access Layer (EF Core + Repository)
+│   ├── Data                        // DbContext (ERPDbContext)
+│   ├── Repositories                // Repository pattern (ProductRepository, OrderRepository)
+│   └── Migrations                  // EF Core migration dosyaları (Azure SQL DB ile uyumlu)
+│
+├── 📂 KZERP.Identity           // Kullanıcı yönetimi (ASP.NET Identity)
+│   ├── ApplicationUser.cs          // IdentityUser’dan türeyen kullanıcı sınıfı
+│   ├── RoleConfig.cs               // Rol tanımları (Admin, Worker, Engineer)
+│   ├── IdentityDbContext.cs        // Identity için DbContext
+│   └── Services                    // Auth servisleri (Login, Register, JWT)
+│
+── 📂 KZERP.Azure              // Azure entegrasyonları (opsiyonel klasör)
+│   ├── IoTHubIntegration.cs       // Raspberry Pi verilerini IoT Hub ile alma
+│   ├── AppServiceDeployment       // API ve UI deploy ayarları
+│   └── AzureConfig.cs             // Connection string ve servis ayarları
+│
+├── 📂 KZERP.Tests              // Unit / Integration testler
+│   ├── API.Tests                   // Web API testleri
+│   ├── Core.Tests                  // Business Logic testleri
+│   └── UI.Tests                    // UI testleri (opsiyonel)
+├── 📂 KZERP.ReactUI            // React tabanlı modern UI (opsiyonel ikinci arayüz)
+│   ├── src                         // React bileşenleri (Dashboard, Charts, IoT Data vs.)
+│   ├── public                      // index.html
+│   ├── package.json                // bağımlılıklar
+│   └── README.md

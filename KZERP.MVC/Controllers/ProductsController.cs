@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
 using System.Text.Json;
-using KZERP.Core.Entities;
+using KZERP.Core.Entities.Products;
+
 
 namespace KZERP.MVC.Controllers
 {
@@ -17,8 +17,8 @@ namespace KZERP.MVC.Controllers
         public async Task<IActionResult> Index()
         {
             // İsimlendirilmiş istemciyi kullan
-            var httpClient = _httpClientFactory.CreateClient("MyApi");
-            var response = await httpClient.GetAsync("api/products");
+            var httpClient = _httpClientFactory.CreateClient("KZERPApiClient");
+            var response = await httpClient.GetAsync("api/Products");
             response.EnsureSuccessStatusCode();
 
             var jsonString = await response.Content.ReadAsStringAsync();
