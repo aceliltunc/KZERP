@@ -4,12 +4,14 @@
 using KZERP.Core.DTOs.WarehouseDTO;
 using KZERP.Core.Entities.Warehouses;
 using KZERP.Core.Interfaces.IWarehousesService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KZERP.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WarehousesController : ControllerBase
     {
         private readonly IWarehousesService _warehousesService;

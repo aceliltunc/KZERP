@@ -1,12 +1,14 @@
 using KZERP.Core.DTOs.RfidDTO;
 using KZERP.Core.Entities.RfidLogs;
 using KZERP.Core.Interfaces.IRfidService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KZERP.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RFIDController : ControllerBase
     {
         private readonly IRfidService _rfidService;

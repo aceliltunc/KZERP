@@ -1,3 +1,7 @@
 ﻿@{
     Layout = "_Layout";
+    @* if (ViewContext.RouteData.Values["Controller"]?.ToString() == "AccountSettings")
+    {
+        Layout = "_AccountSettingsLayout.cshtml";
+    } *@
 }

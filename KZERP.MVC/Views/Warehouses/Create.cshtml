@@ -1,0 +1,33 @@
+@using KZERP.Core.Entities.Warehouses
+@model Warehouse
+@{
+    ViewData["Title"] = "Create Warehouse";
+}
+
+<h2>Create Warehouse</h2>
+<hr />
+
+<form asp-action="Create" method="post">
+
+    <div class="form-group mt-2">
+        <label asp-for="Name" class="control-label"></label>
+        <textarea asp-for="Name" class="form-control"></textarea>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="Location" class="control-label"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

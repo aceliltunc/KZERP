@@ -26,6 +26,13 @@ namespace KZERP.Identity
                     Id = "33333333-3333-3333-3333-333333333333", 
                     Name = "Worker", 
                     NormalizedName = "WORKER" 
+                },
+                new IdentityRole
+                {
+                    Id = "44444444-4444-4444-4444-444444444444",
+                    Name = "User",
+                    NormalizedName = "USER",
+                    ConcurrencyStamp = "EBF296D8-18C8-42A9-93C1-4D30B9557C4F"
                 }
             );
         }

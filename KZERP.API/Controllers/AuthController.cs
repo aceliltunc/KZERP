@@ -28,5 +28,6 @@ namespace KZERP.API.Controllers
             if (!ok) return Unauthorized(new { Error = error });
             return Ok(new { Token = token });
         }
+
     }
 }

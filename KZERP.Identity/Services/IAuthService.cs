@@ -3,8 +3,20 @@ using System.Threading.Tasks;
 
 namespace KZERP.Identity.Services
 {
-    public record RegisterDto(string Username, string Email, string Password, string? FullName, string? JobTitle, string? Department);
-    public record LoginDto(string UsernameOrEmail, string Password);
+    public record RegisterDto
+    {
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? FullName { get; set; }
+        public string? JobTitle { get; set; }
+        public string? Department { get; set; }
+    }
+    public class LoginDto
+    {
+        public string? UsernameOrEmail { get; set; }
+        public string? Password { get; set; }
+    }
 
     public interface IAuthService
     {

@@ -37,8 +37,12 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.Identit
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\System.ClientModel.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
@@ -80,6 +84,7 @@ C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.Generat
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.AssemblyInfoInputs.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.AssemblyInfo.cs
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.csproj.CoreCompileInputs.cache
+C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.MvcApplicationPartsAssemblyInfo.cs
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.MvcApplicationPartsAssemblyInfo.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.RazorAssemblyInfo.cache
 C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC\obj\Debug\net8.0\KZERP.MVC.RazorAssemblyInfo.cs

@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KZERP.API.Controllers
 {
-    
+
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -62,7 +63,7 @@ namespace KZERP.API.Controllers
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
 

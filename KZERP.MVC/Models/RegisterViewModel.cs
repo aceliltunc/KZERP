@@ -6,6 +6,7 @@ namespace KZERP.MVC.Models
     {
         [Required]
         public string? Username { get; set; }
+        public string? FullName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -20,7 +21,6 @@ namespace KZERP.MVC.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string? ConfirmPassword { get; set; }
 
-        public string? FullName { get; set; }
         public string? JobTitle { get; set; }
         public string? Department { get; set; }
         public string? PhoneNumber { get; set; }

@@ -1,0 +1,34 @@
+@using KZERP.Core.Entities.RfidLogs
+@model RfidLogs
+
+@{
+    ViewData["Title"] = "Edit RFID logs";
+}
+
+<h2>Edit RFID</h2>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group mb-3">
+        <label asp-for="CardUID" class="form-label"></label>
+        <input asp-for="CardUID" class="form-control" />
+        <span asp-validation-for="CardUID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DataContent" class="form-label"></label>
+        <input asp-for="DataContent" class="form-control" />
+        <span asp-validation-for="DataContent" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ScanTime" class="form-label"></label>
+        <input asp-for="ScanTime" class="form-control" />
+        <span asp-validation-for="ScanTime" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

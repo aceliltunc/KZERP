@@ -1,28 +1,24 @@
 {
     "folder-color.pathColors": [
         {
-            "folderPath": "KZERP.API\\Controllers\\",
-            "color": "foldercolorizer.color_ff0000"
-        },
-        {
             "folderPath": "KZERP.API\\",
-            "color": "foldercolorizer.color_ff0000"
+            "color": "foldercolorizer.color_33cc00"
         },
         {
             "folderPath": "KZERP.Core\\",
-            "color": "foldercolorizer.color_ffffff"
+            "color": "foldercolorizer.color_33ccff"
         },
         {
             "folderPath": "KZERP.Identity\\",
-            "color": "foldercolorizer.color_0000ee"
+            "color": "foldercolorizer.color_3366ff"
         },
         {
             "folderPath": "KZERP.Infrastructure\\",
-            "color": "foldercolorizer.color_ffff00"
+            "color": "foldercolorizer.color_00bb00"
         },
         {
             "folderPath": "KZERP.MVC\\",
-            "color": "foldercolorizer.color_33cc66"
+            "color": "foldercolorizer.color_cc0000"
         }
     ]
 }

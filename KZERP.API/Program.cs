@@ -23,6 +23,8 @@ using KZERP.Identity.IdentityDbContext;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Security.Claims;
+using Microsoft.Extensions.Options;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -53,17 +55,30 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
 
 
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role;
+    options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier;
+    options.ClaimsIdentity.UserNameClaimType = ClaimTypes.Name;
+});
 // JWT Authentication Configuration
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication(x=>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
     {
         var cfg = builder.Configuration;
+        options.RequireHttpsMetadata = false;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
+            RoleClaimType = ClaimTypes.Role,   
+            NameClaimType = ClaimTypes.Name,
             ValidIssuer = cfg["Jwt:Issuer"],
             ValidAudience = cfg["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(cfg["Jwt:Key"]!))
@@ -71,7 +86,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         options.SaveToken = true;
     });
 
-builder.Services.AddAuthorization();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("UserPolicy", policy => policy.RequireRole("User", "Worker"));
+});
+
+
+
+
+
 
 // Identity Services (DI)
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
@@ -133,41 +158,51 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 
-// using (var scope = app.Services.CreateScope())
-// {
-//     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-//     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+// === Role + Admin seeding ===
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-//      if (!await roleManager.RoleExistsAsync("Admin"))
-//      {
-//          await roleManager.CreateAsync(new IdentityRole("Admin"));
-//      }
+    string[] roles = { "Admin", "Engineer", "Worker", "User" };
 
-//      var adminUser = await userManager.FindByEmailAsync("admin@kzerp.com");
-//      if (adminUser == null)
-//      {
-//          adminUser = new ApplicationUser
-//          {
-//              UserName = "admin",
-//              Email = "admin@kzerp.com",
-//              FullName = "Admin User",
-//              JobTitle = "System Administrator",
-//              Department = "IT",
-//              IsActive = true
-//          };
-//          await userManager.CreateAsync(adminUser, "kznimda$74");
-//      }
+    foreach (var role in roles)
+    {
+        var roleExist = await roleManager.RoleExistsAsync(role);
+        if (!roleExist)
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
 
-//      if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
-//      {
-//          await userManager.AddToRoleAsync(adminUser, "Admin");
-//      }
+    // Default Admin user
+    var adminEmail = "admin@kzerp.com";
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
-//  }
+    if (adminUser == null)
+    {
+        var admin = new ApplicationUser
+        {
+            UserName = "admin",
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
+
+        var result = await userManager.CreateAsync(admin, "kznimda$74!");
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
+}
+// === END Seeding ===
 
 
 app.Run();

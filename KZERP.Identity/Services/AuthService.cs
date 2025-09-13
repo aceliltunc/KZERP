@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
 using KZERP.Identity.AppUser;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace KZERP.Identity.Services
 {
@@ -30,22 +31,24 @@ namespace KZERP.Identity.Services
                 Department = dto.Department,
                 IsActive = true
             };
-
+            if (dto.Password == null) throw new ArgumentNullException(nameof(dto.Password));
             var result = await _userManager.CreateAsync(user, dto.Password);
             if (!result.Succeeded) return (false, result.Errors.Select(e => e.Description));
 
             // Default rol (opsiyonel)
-            await _userManager.AddToRoleAsync(user, "User" /* ya da "Worker" */);
+            await _userManager.AddToRoleAsync(user, "User");
             return (true, Array.Empty<string>());
         }
 
         public async Task<(bool ok, string? token, string? error)> LoginAsync(LoginDto dto)
         {
+            if (dto.UsernameOrEmail == null) throw new ArgumentNullException(nameof(dto.UsernameOrEmail));
             var user = await _userManager.FindByNameAsync(dto.UsernameOrEmail)
                     ?? await _userManager.FindByEmailAsync(dto.UsernameOrEmail);
 
             if (user is null) return (false, null, "User not found");
 
+            if (dto.Password == null) throw new ArgumentNullException(nameof(dto.Password));
             var passwordOk = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, false);
             if (!passwordOk.Succeeded) return (false, null, "Invalid password");
 
@@ -56,6 +59,7 @@ namespace KZERP.Identity.Services
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
                 new Claim("FullName", user.FullName ?? string.Empty),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
             claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
 

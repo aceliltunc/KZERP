@@ -1,0 +1,32 @@
+@using KZERP.Core.Entities.RfidLogs
+@model RfidLogs
+
+@{
+    ViewData["Title"] = "RFID Details";
+}
+
+<div class="card shadow p-4">
+    <h2 class="mb-3">RFID Detail</h2>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Card UID</dt>
+        <dd class="col-sm-9">@Model.CardUID</dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.DataContent</dd>
+
+        <dt class="col-sm-3">Category</dt>
+        <dd class="col-sm-9">@Model.ScanTime</dd>
+
+
+    </dl>
+
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
