@@ -4,6 +4,7 @@ namespace KZERP.MVC.Models;
 
 public class ChangePasswordViewModel
 {
+    [Required]
     public string CurrentPassword { get; set; } = "";
     [Required]
     [DataType(DataType.Password)]

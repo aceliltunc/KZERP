@@ -1,0 +1,38 @@
+@using KZERP.MVC.Models
+@model AccountSettingsViewModel
+@{
+    ViewData["Title"] = "Update Profile Settings";
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success position-absolute start-50 translate-middle-x">@ViewBag.Message</div>
+}
+
+<div class="card shadow p-4">
+    <div class="col-md-9 p-4">
+        <form asp-action="UpdateProfile" method="post"
+            class="mb-4 border-0 mx-auto" style="max-width: 400px;">
+            <h2>@ViewData["Title"]</h2>
+            <div class="form-group">
+                <label asp-for="UserName" class="form-label"></label>
+                <input asp-for="UserName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="form-label"></label>
+                <input asp-for="PhoneNumber" class="form-control">
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-0">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KZERP.MVC</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -85,10 +85,45 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="d-flex flex-grow-1 pt-0 ms-0">
+        <!-- Controller'a göre farklı bir layout yapısı oluşturuluyor -->
+        @if (ViewContext.RouteData.Values["controller"]?.ToString() == "AccountSettings")
+        {
+            <div class="container-fluid d-flex vh-100 p-0">
+                <div class="row w-100 g-0">
+                    <!-- Sidebar -->
+                    <div class="col-md-3 bg-light border-end p-3">
+                        <h4 class="mb-4"><a class="text-decoration-none text-dark" asp-controller="AccountSettings" asp-action="Index">Settings</a></h4>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" asp-controller="AccountSettings" asp-action="UpdateProfile">
+                                    Update Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="AccountSettings" asp-action="ChangePassword">
+                                    Change Password
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Ana içerik alanı -->
+                    <div class="col-md-9 p-4">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        }
     </div>
 
     <footer class="border-top footer text-muted">

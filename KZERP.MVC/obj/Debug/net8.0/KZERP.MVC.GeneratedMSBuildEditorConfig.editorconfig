@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\ACT\drive\YazilimProjeleri\KZERP\KZERP.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/ACT/drive/YazilimProjeleri/KZERP/KZERP.MVC/Views/AccountSettings/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFNldHRpbmdzXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/ACT/drive/YazilimProjeleri/KZERP/KZERP.MVC/Views/AccountSettings/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFNldHRpbmdzXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ACT/drive/YazilimProjeleri/KZERP/KZERP.MVC/Views/AccountSettings/UpdateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFNldHRpbmdzXFVwZGF0ZVByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/ACT/drive/YazilimProjeleri/KZERP/KZERP.MVC/Views/Auth/Login.cshtml]

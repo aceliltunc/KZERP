@@ -4,6 +4,7 @@ using KZERP.MVC.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace KZERP.MVC.Controllers
@@ -21,6 +22,26 @@ namespace KZERP.MVC.Controllers
 
 
         public async Task<IActionResult> Index()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _userManager.FindByIdAsync(userId!);
+
+            if (user == null) return NotFound("User not found");
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            return View(new
+            {
+                user.Id,
+                user.UserName,
+                user.Email,
+                user.PhoneNumber,
+                Roles = roles
+            });
+        }
+
+
+        public async Task<IActionResult> UpdateProfile()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId == null) { return NotFound(); }
@@ -73,35 +94,40 @@ namespace KZERP.MVC.Controllers
 
         }
 
+
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
-            if (!ModelState.IsValid) { return View("Index", model); }
+            if (!ModelState.IsValid) return View(model);
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var user = await _userManager.FindByIdAsync(userId!);
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return NotFound();
+            var check = await _userManager.CheckPasswordAsync(user, model.CurrentPassword);
+            if (!check)
+            {
+                ModelState.AddModelError("", "Current password is incorrect.");
+                return View(model);
+            }
 
-            if (user == null) { return NotFound(); }
-            if (model.NewPassword == null) { return View("Index",model); }
-
-            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword!);
 
             if (!result.Succeeded)
             {
-                TempData["PasswordErrors"] = string.Join(" ", result.Errors.Select(e => e.Description));
-            }
-            else
-            {
-                TempData["PasswordSuccess"] = "Password changed successfully.";
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError(string.Empty, error.Description);
+                return View(model);
             }
 
-
-            return RedirectToAction("Index");
+            TempData["PasswordSuccess"] = "Password changed successfully.";
+            return View("Index");
         }
 
+
     }
-
-
-
 }
